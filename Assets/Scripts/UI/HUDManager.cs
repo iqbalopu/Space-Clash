@@ -5,13 +5,13 @@ public class HUDManager : MonoBehaviour
 {
     [SerializeField] private CountdownUI countdown;
     [SerializeField] private MatchResultUI matchResult;
-    [SerializeField] private GameObject hudRoot;
+    [SerializeField] private GameObject hpBarsRoot;
     [SerializeField] private ShipController ship1Controller;
     [SerializeField] private ShipController ship2Controller;
 
     private void Start()
     {
-        hudRoot.SetActive(false);
+        hpBarsRoot.SetActive(false);
         ship1Controller.enabled = false;
         ship2Controller.enabled = false;
 
@@ -20,7 +20,7 @@ public class HUDManager : MonoBehaviour
 
     private void OnCountdownComplete()
     {
-        hudRoot.SetActive(true);
+        hpBarsRoot.SetActive(true);
         ship1Controller.enabled = true;
         ship2Controller.enabled = true;
     }
