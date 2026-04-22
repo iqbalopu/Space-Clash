@@ -29,6 +29,11 @@ public class ShipController : MonoBehaviour
         rb.angularDamping = 3f;
     }
 
+    public void RefreshStats()
+    {
+        maxSpeed = GetComponent<ShipLoadout>().engine.maxSpeed;
+    }
+
     private void FixedUpdate()
     {
         ShipInputData inputData = playerInput.InputData;
